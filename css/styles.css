@@ -1,10 +1,10 @@
 body {
-  box-sizing: border-box;
   font-family: "Roboto", sans-serif;
   color: var(--primary-text-color);
   background-color: var(--primary-white-color);
   font-style: normal;
   font-weight: 400px;
+  margin: 0;
 }
 :root {
   --primary-text-color: #212121;
@@ -25,7 +25,7 @@ ul {
 .container {
   margin-left: auto;
   margin-right: auto;
-  width: 1170px;
+  width: 1200px;
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -94,7 +94,8 @@ ul {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
-  margin-left: 331px;
+  justify-content: flex-end;
+  width: 638px;
 }
 .address-nav .link {
   display: block;
@@ -123,8 +124,10 @@ ul {
 }
 .hero {
   text-align: center;
-  margin-top: 0;
-  margin-bottom: 0;
+  padding-top: 200px;
+  padding-bottom: 200px;
+  background-image: url("../images/background.jpg");
+  background-size: cover;
 }
 
 .hero-title {
@@ -194,7 +197,28 @@ ul {
 .feature-list .feature:not(:last-child) {
   margin-right: 30px;
 }
-
+.feature::before {
+  display: block;
+  content: "";
+  height: 120px;
+  background-color: var(--secondary-background-color);
+  margin-bottom: 30px;
+  border-radius: 4px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.feature:nth-child(1)::before {
+  background-image: url("../images/Group.svg");
+}
+.feature:nth-child(2)::before {
+  background-image: url("../images/clock\ 1.svg");
+}
+.feature:nth-child(3)::before {
+  background-image: url("../images/diagram\ 1\ \(1\).svg");
+}
+.feature:nth-child(4)::before {
+  background-image: url("../images/astronaut\ 1.svg");
+}
 .section-title {
   font-weight: 700;
   font-size: 36px;
@@ -209,10 +233,7 @@ ul {
 }
 .cards {
   display: flex;
-  justify-content: center;
-}
-.cards .cards-items:not(:last-child) {
-  margin-right: 30px;
+  justify-content: space-between;
 }
 
 .section-team {
@@ -220,12 +241,12 @@ ul {
 }
 .team-list {
   display: flex;
-}
-.team-list .item:not(:last-child) {
-  margin-right: 30px;
+  justify-content: space-between;
 }
 .team-list .item {
   background-color: var(--primary-white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 .team-member {
   font-weight: 500;
@@ -244,11 +265,28 @@ ul {
   text-align: center;
   letter-spacing: 0.03em;
   margin-top: 0;
-  margin-bottom: 30px;
+  margin-bottom: 16px;
 }
 .member-image {
   margin-top: 0;
   margin-bottom: 30px;
+}
+.team-media {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+.team-media .link {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  background-color: red;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.team-media .link:not(:last-child) {
+  margin-right: ;
 }
 
 /*Настройки для футера*/
@@ -276,8 +314,61 @@ ul {
 .footer-nav.link:focus {
   color: var(--accent-color);
 }
+.footer-media .title {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  letter-spacing: 0.03em;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: var(--primary-white-color);
+}
+.footer-box {
+  display: flex;
+  align-items: center;
+}
+.footer-media {
+  margin-left: 70px;
+}
+.media-links {
+  display: flex;
+}
+.media-links .link {
+  display: inline-block;
+  width: 44px;
+  height: 44px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.media-links .link:not(:last-child),
+.team-media .link:not(:last-child) {
+  margin-right: 10px;
+}
+.media-links .link:nth-child(1) {
+  background-image: url("../images/instagram\ 2.svg");
+}
+.media-links .link:nth-child(2) {
+  background-image: url("../images/twitter\ 1.svg");
+}
+
+.media-links .link:nth-child(3) {
+  background-image: url("../images/facebook\ 1.svg");
+}
+
+.media-links .link:nth-child(4) {
+  background-image: url("../images/linkedin\ 1.svg");
+}
+.media-links .link:hover,
+.media-links .link:focus {
+  background-color: var(--accent-color);
+  cursor: pointer;
+}
 
 /*Отдельные настройки для Портфолио*/
+
 .button-list {
   display: flex;
   justify-content: center;
